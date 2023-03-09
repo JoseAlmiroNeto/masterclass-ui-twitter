@@ -4,17 +4,20 @@ import "./Tweet.css";
 
 interface TweetsProps {
   content: string;
+  img: string;
+  name: string;
+  hashtag: string;
 }
 
 export function Tweet(props: TweetsProps) {
   return (
     <Link to="/tweet" className="tweet">
-      <img src="https://github.com/diego3g.png" alt="user" />
+      <img src={props.img} alt="user" />
 
       <div className="tweet-content">
         <div className="tweet-content-header">
-          <strong>Diego Fernandes</strong>
-          <span>@dieegosf</span>
+          <strong>{props.name}</strong>
+          <span>{props.hashtag}</span>
         </div>
 
         <p>{props.content}</p>
